@@ -1,0 +1,14 @@
+// Después del export default function
+ 
+ const [total, setTotal] = useState("");
+  const handleInputChange = ({target}) => {
+    if(target.value.charAt(target.value.length -1) == '.'){
+      return false;
+  }else if(target.value >= 0){
+      setTotal(target.value)
+    }
+  }
+
+// en el input
+
+value={total} onChange={handleInputChange}
