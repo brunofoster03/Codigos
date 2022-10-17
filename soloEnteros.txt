@@ -11,9 +11,12 @@
 
 // dentro del input html
 
-value={total} onChange={handleInputChange}			// Se pone el estado en el value del input y se pone la función flecha
+type='tel' value={total} onChange={handleInputChange}		// Se pone el estado en el value del input y se pone la función (**)
 										// para que se ejecute cuando hay un cambio en el input
 
 
-* al comparar el target.value con el 0 (SIN COMILLAS) verifica si es un número. Por lo tanto si se selecciona una tecla
+* Al comparar el target.value con el 0 (SIN COMILLAS) verifica si es un número. Por lo tanto si se selecciona una tecla
 que no sea un número no se cambiará el texto del input.
+
+** en el type del input hay que poner type='tel' o type='text', NO type='number' porque si no te va a dejar poner la letra 'e'.
+A menos que agregues la condición a la función.
