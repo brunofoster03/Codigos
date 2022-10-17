@@ -1,14 +1,19 @@
 // Después del export default function
  
- const [total, setTotal] = useState("");
-  const handleInputChange = ({target}) => {
-    if(target.value.charAt(target.value.length -1) == '.'){
-      return false;
-  }else if(target.value >= 0){
-      setTotal(target.value)
+ const [total, setTotal] = useState(""); 				// Estado para almacenar el valor del input
+  const handleInputChange = ({target}) => {			// Función flecha
+    if(target.value.charAt(target.value.length -1) == '.'){ // Para que no hayan decimales
+      return false;							// Retorna false para que no se ponga un . en el valor del input
+  }else if(target.value >= 0){					// *Verificamos si el valor ingresa es un número con el >= 0
+      setTotal(target.value)						// Se cambia el valor del estado si cumple con las condiciones
     }
   }
 
-// en el input
+// dentro del input html
 
-value={total} onChange={handleInputChange}
+value={total} onChange={handleInputChange}			// Se pone el estado en el value del input y se pone la función flecha
+										// para que se ejecute cuando hay un cambio en el input
+
+
+* al comparar el target.value con el 0 (SIN COMILLAS) verifica si es un número. Por lo tanto si se selecciona una tecla
+que no sea un número no se cambiará el texto del input.
